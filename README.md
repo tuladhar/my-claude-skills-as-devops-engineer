@@ -62,17 +62,20 @@ A plugin bundles skills with hooks, so it can change how Claude works in every s
 
 After Claude replies, Claude Code often shows a grey suggestion in the prompt box that you accept with **Tab**. Often it doesn't, even when Claude has just told you the exact command to run, and you end up copying and pasting it by hand.
 
-This plugin makes Claude end every reply with the single best next thing to type, alone on the last line:
+This plugin makes Claude end every reply with a short numbered list of the exact things you could type next, best first:
 
 ```
-**Next:** `! claude mcp add --scope user --transport http foo https://example.com/mcp`
+Suggested next:
+[1] `! claude mcp add --scope user --transport http foo https://example.com/mcp`
+[2] `/mcp`
+[3] `run the full test in the playground`
 ```
 
-That clear last line is what Claude Code's own suggestion picks up, so the grey Tab suggestion appears far more often. It can be a command for you to run (`! ...`), a Claude Code command (`/mcp`), the answer to a question Claude just asked (`yes, go ahead`), or the obvious follow-up (`open a PR`).
+That clear ending is what Claude Code's own suggestion picks up, so the grey Tab suggestion appears far more often, usually with [1]. To pick another option, type its number (for example `2`) and press Enter, and Claude does it. An item can be a command for you to run (`! ...`), a Claude Code command (`/mcp`), the answer to a question Claude just asked (`yes, go ahead`), or the obvious follow-up (`open a PR`). When there is only one sensible next step, you only get [1].
 
 A small hook loads the rules at the start of every session (and again after `/clear` or compaction), so there is nothing to call. Nothing new shows up in Claude Code itself.
 
-Claude Code still decides whether to show a suggestion. No plugin can set that grey text directly, so on some turns you may still see none.
+Claude Code still decides whether to show a suggestion, and Tab only accepts the one it shows; it can't cycle through the list. No plugin can set that grey text directly, so on some turns you may still see none.
 
 Install:
 

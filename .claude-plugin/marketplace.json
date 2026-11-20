@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "better-prompt-suggestions",
-      "description": "Makes Claude end every reply with the single best next thing to type, so Claude Code's grey prompt suggestion (accept with Tab) offers it far more often.",
+      "description": "Makes Claude end every reply with a numbered Suggested next list of exact things to type, best first, so Claude Code's grey prompt suggestion (accept with Tab) offers the best one far more often. Type a number to pick another.",
       "source": "./plugins/better-prompt-suggestions",
       "category": "productivity",
       "homepage": "https://github.com/tuladhar/my-claude-skills-as-devops-engineer/tree/main/plugins/better-prompt-suggestions"

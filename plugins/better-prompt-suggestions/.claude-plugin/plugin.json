@@ -1,7 +1,7 @@
 {
   "name": "better-prompt-suggestions",
-  "version": "0.1.0",
-  "description": "Makes Claude end every reply with the single best next thing to type, so Claude Code's grey prompt suggestion (accept with Tab) offers it far more often.",
+  "version": "0.1.1",
+  "description": "Makes Claude end every reply with a numbered Suggested next list of exact things to type, best first, so Claude Code's grey prompt suggestion (accept with Tab) offers the best one far more often. Type a number to pick another.",
   "author": {
     "name": "Puru Tuladhar"
   },
