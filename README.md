@@ -42,6 +42,8 @@ Reorders the menus on [Omarchy](https://omarchy.org/), for example moving Lock t
 /omarchy-menu-order reset
 ```
 
+![Demo: resetting the System menu, then moving Lock to the top with /omarchy-menu-order](assets/omarchy-menu-order-demo.gif)
+
 Claude reads the menu on your machine, works out the new order and applies it. The change shows up straight away, with no restart. Only the user's own menu file is changed, inside clearly marked lines, and a backup is kept. Omarchy's own files are never edited.
 
 Omarchy updates can change menu items, and a hand-made copy would quietly go stale. To prevent that, the skill installs a small update hook that rebuilds your order from the new menu after every `omarchy update`. `reset` removes the reorder and the hook.
