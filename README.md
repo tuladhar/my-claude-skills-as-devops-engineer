@@ -54,6 +54,43 @@ Needs `python3`.
 
 [See the skill →](skills/omarchy-menu-order/SKILL.md)
 
+## Plugins
+
+A plugin bundles skills with hooks, so it can change how Claude works in every session, not only when you call a skill.
+
+### better-prompt-suggestions
+
+After Claude replies, Claude Code often shows a grey suggestion in the prompt box that you accept with **Tab**. Often it doesn't, even when Claude has just told you the exact command to run, and you end up copying and pasting it by hand.
+
+This plugin makes Claude end every reply with the single best next thing to type, alone on the last line:
+
+```
+**Next:** `! claude mcp add --scope user --transport http foo https://example.com/mcp`
+```
+
+That clear last line is what Claude Code's own suggestion picks up, so the grey Tab suggestion appears far more often. It can be a command for you to run (`! ...`), a Claude Code command (`/mcp`), the answer to a question Claude just asked (`yes, go ahead`), or the obvious follow-up (`open a PR`).
+
+A small hook loads the rules at the start of every session (and again after `/clear` or compaction), so there is nothing to call. Nothing new shows up in Claude Code itself.
+
+Claude Code still decides whether to show a suggestion. No plugin can set that grey text directly, so on some turns you may still see none.
+
+Install:
+
+```
+/plugin install better-prompt-suggestions --marketplace tuladhar/my-claude-skills-as-devops-engineer
+```
+
+On Claude Code older than 2.1.275, add the marketplace first:
+
+```
+/plugin marketplace add tuladhar/my-claude-skills-as-devops-engineer
+/plugin install better-prompt-suggestions@my-claude-skills-as-devops-engineer
+```
+
+Turn it off any time with `/plugin disable better-prompt-suggestions`.
+
+[See the plugin →](plugins/better-prompt-suggestions/)
+
 ## How to use a skill
 
 1. Copy the skill folder into your Claude skills folder:
@@ -67,7 +104,7 @@ Needs `python3`.
 
 ## More skills coming
 
-This is just the start. I'll keep adding skills that help with everyday DevOps work, such as debugging, incident notes and infrastructure reviews. Each new skill will be listed in this README.
+This is just the start. I'll keep adding skills and plugins that help with everyday DevOps work, such as debugging, incident notes and infrastructure reviews. Each new one will be listed in this README.
 
 ## Free to use
 
