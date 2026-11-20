@@ -32,15 +32,36 @@ At the end, it gives you a short checklist of what is left to do and who should 
 
 [See the skill →](skills/step-by-step/SKILL.md)
 
+### omarchy-menu-order
+
+Reorders the menus on [Omarchy](https://omarchy.org/), for example moving Lock to the top of the System menu (Super + Esc). Just say what you want:
+
+```
+/omarchy-menu-order lock to the top
+/omarchy-menu-order move logout below reboot
+/omarchy-menu-order reset
+```
+
+Claude reads the menu on your machine, works out the new order and applies it. The change shows up straight away, with no restart. Only the user's own menu file is changed, inside clearly marked lines, and a backup is kept. Omarchy's own files are never edited.
+
+Omarchy updates can change menu items, and a hand-made copy would quietly go stale. To prevent that, the skill installs a small update hook that rebuilds your order from the new menu after every `omarchy update`. `reset` removes the reorder and the hook.
+
+The skill only reorders existing items. If a request needs anything riskier, like changing what an item runs or editing Omarchy's system files, Claude explains why and doesn't do it.
+
+Needs `python3`.
+
+[See the skill →](skills/omarchy-menu-order/SKILL.md)
+
 ## How to use a skill
 
 1. Copy the skill folder into your Claude skills folder:
 
    ```bash
    cp -r skills/step-by-step ~/.claude/skills/
+   # or: cp -r skills/omarchy-menu-order ~/.claude/skills/
    ```
 
-2. Open Claude Code and type `/step-by-step` followed by your topic.
+2. Open Claude Code and type the skill name, for example `/step-by-step` followed by your topic.
 
 ## More skills coming
 
