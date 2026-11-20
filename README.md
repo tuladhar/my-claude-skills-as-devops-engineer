@@ -77,6 +77,16 @@ A small hook loads the rules at the start of every session (and again after `/cl
 
 Claude Code still decides whether to show a suggestion, and Tab only accepts the one it shows; it can't cycle through the list. No plugin can set that grey text directly, so on some turns you may still see none.
 
+To keep suggestions on near usage limits and after long stretches without you, add this to `~/.claude/settings.json` and restart Claude Code. A plugin can't set it for you, so if it's missing, Claude mentions it once per session.
+
+```json
+{
+  "env": {
+    "CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION": "true"
+  }
+}
+```
+
 Install:
 
 ```
