@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "my-claude-skills-as-devops-engineer",
+  "description": "Claude Code plugins from Puru Tuladhar's everyday DevOps work",
+  "owner": {
+    "name": "Puru Tuladhar"
+  },
+  "plugins": [
+    {
+      "name": "better-prompt-suggestions",
+      "description": "Makes Claude end every reply with the single best next thing to type, so Claude Code's grey prompt suggestion (accept with Tab) offers it far more often.",
+      "source": "./plugins/better-prompt-suggestions",
+      "category": "productivity",
+      "homepage": "https://github.com/tuladhar/my-claude-skills-as-devops-engineer/tree/main/plugins/better-prompt-suggestions"
+    }
+  ]
+}

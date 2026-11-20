@@ -1,0 +1,10 @@
+{
+  "name": "better-prompt-suggestions",
+  "version": "0.1.0",
+  "description": "Makes Claude end every reply with the single best next thing to type, so Claude Code's grey prompt suggestion (accept with Tab) offers it far more often.",
+  "author": {
+    "name": "Puru Tuladhar"
+  },
+  "homepage": "https://github.com/tuladhar/my-claude-skills-as-devops-engineer/tree/main/plugins/better-prompt-suggestions",
+  "license": "MIT"
+}
