@@ -12,6 +12,13 @@
       "source": "./plugins/better-prompt-suggestions",
       "category": "productivity",
       "homepage": "https://github.com/tuladhar/my-claude-skills-as-devops-engineer/tree/main/plugins/better-prompt-suggestions"
+    },
+    {
+      "name": "smart-copy",
+      "description": "Adds /smart-copy: pick a command, code block, table, URL or path from Claude's last reply and copy it with one key, from a picker above the prompt.",
+      "source": "./plugins/smart-copy",
+      "category": "productivity",
+      "homepage": "https://github.com/tuladhar/my-claude-skills-as-devops-engineer/tree/main/plugins/smart-copy"
     }
   ]
 }
