@@ -1,0 +1,11 @@
+{
+  "name": "smart-copy",
+  "version": "0.1.0",
+  "description": "Adds /smart-copy: pick a command, code block, table, URL or path from Claude's last reply and copy it with one key, from a picker above the prompt.",
+  "author": {
+    "name": "Puru Tuladhar"
+  },
+  "homepage": "https://github.com/tuladhar/my-claude-skills-as-devops-engineer/tree/main/plugins/smart-copy",
+  "license": "MIT",
+  "types": "./types/index.d.ts"
+}

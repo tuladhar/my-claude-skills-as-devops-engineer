@@ -104,6 +104,47 @@ Turn it off any time with `/plugin disable better-prompt-suggestions`.
 
 [See the plugin →](plugins/better-prompt-suggestions/)
 
+### smart-copy
+
+Claude's built-in `/copy` copies the whole last reply. Most of the time I only want one piece of it: the command to run, the kubectl snippet, the PR link or a file path.
+
+`/smart-copy` opens a picker right above the prompt, in the same place Claude Code asks its own questions. It lists every useful piece of the last reply, each with a key:
+
+```
+Copy from the last reply · press a key · q to close
+0: Whole reply  reply
+1: bash /tmp/renew-cert.sh  shell
+2: /permissions  next
+3: kubectl get secret ca.example.com -n istio-system  code
+4: Check | Result (5 rows)  table
+5: https://github.com/org/repo/pull/17  url
+q: Close
+```
+
+Press a key and that piece is on your clipboard. A toast confirms it and the picker closes.
+
+What it finds, in this order:
+
+- **Suggested next** items (pairs well with [better-prompt-suggestions](#better-prompt-suggestions)). A `! cmd` item is copied as the plain shell command, without the `!`.
+- **Code blocks**, without the fences.
+- **Tables**, as Markdown.
+- **URLs**, file **paths** and other inline code.
+- `0` is always the whole reply, with the Suggested next list left out.
+
+If you already know which one you want, `/smart-copy 1` copies item 1 straight away without opening the picker. Typing your next prompt closes the picker.
+
+It reads the whole last reply, including text Claude wrote between tool calls.
+
+Install:
+
+```
+/plugin install smart-copy --marketplace tuladhar/my-claude-skills-as-devops-engineer
+```
+
+Needs a Claude Code version that loads plugin hook modules (built and tested on 2.1.331).
+
+[See the plugin →](plugins/smart-copy/)
+
 ## How to use a skill
 
 1. Copy the skill folder into your Claude skills folder:
